@@ -1,0 +1,7 @@
+22:29:34 - Run Server button clicked!
+22:29:35 - Start Client Reading button clicked!
+22:29:36 - Start Client Reading button clicked!
+22:29:37 - Run Server button clicked!
+22:29:38 - Run Server button clicked!
+22:29:38 - Run Server button clicked!
+22:29:45 - Run Server button clicked!
