@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "F:\\Documentos\\MicrosoftSource\\repos\\ModbusPlug\\ModbusPlug\\ModbusPlug.csproj": {}
+    "C:\\Users\\ferna\\Documents\\00_Proyectos\\ModbusPlug\\ModbusPlug.csproj": {}
   },
   "projects": {
-    "F:\\Documentos\\MicrosoftSource\\repos\\ModbusPlug\\ModbusPlug\\ModbusPlug.csproj": {
+    "C:\\Users\\ferna\\Documents\\00_Proyectos\\ModbusPlug\\ModbusPlug.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "F:\\Documentos\\MicrosoftSource\\repos\\ModbusPlug\\ModbusPlug\\ModbusPlug.csproj",
+        "projectUniqueName": "C:\\Users\\ferna\\Documents\\00_Proyectos\\ModbusPlug\\ModbusPlug.csproj",
         "projectName": "ModbusPlug",
-        "projectPath": "F:\\Documentos\\MicrosoftSource\\repos\\ModbusPlug\\ModbusPlug\\ModbusPlug.csproj",
+        "projectPath": "C:\\Users\\ferna\\Documents\\00_Proyectos\\ModbusPlug\\ModbusPlug.csproj",
         "packagesPath": "C:\\Users\\ferna\\.nuget\\packages\\",
-        "outputPath": "F:\\Documentos\\MicrosoftSource\\repos\\ModbusPlug\\ModbusPlug\\obj\\",
+        "outputPath": "C:\\Users\\ferna\\Documents\\00_Proyectos\\ModbusPlug\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
-          "D:\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
           "C:\\Users\\ferna\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -42,13 +42,18 @@
         "restoreAuditProperties": {
           "enableAudit": "true",
           "auditLevel": "low",
-          "auditMode": "all"
-        },
-        "SdkAnalysisLevel": "9.0.100"
+          "auditMode": "direct"
+        }
       },
       "frameworks": {
         "net8.0-windows7.0": {
           "targetAlias": "net8.0-windows",
+          "dependencies": {
+            "NModbus": {
+              "target": "Package",
+              "version": "[3.0.81, )"
+            }
+          },
           "imports": [
             "net461",
             "net462",
@@ -68,7 +73,7 @@
               "privateAssets": "none"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.100-rc.2.24474.11/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.403/PortableRuntimeIdentifierGraph.json"
         }
       }
     }

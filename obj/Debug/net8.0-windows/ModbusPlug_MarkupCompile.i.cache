@@ -4,16 +4,16 @@
 winexe
 C#
 .cs
-F:\Documentos\MicrosoftSource\repos\ModbusPlug\ModbusPlug\obj\Debug\net8.0-windows\
+C:\Users\ferna\Documents\00_Proyectos\ModbusPlug\obj\Debug\net8.0-windows\
 ModbusPlug
 none
 false
 TRACE;DEBUG;NET;NET8_0;NETCOREAPP
-F:\Documentos\MicrosoftSource\repos\ModbusPlug\ModbusPlug\App.xaml
+C:\Users\ferna\Documents\00_Proyectos\ModbusPlug\App.xaml
 2787170672
 
-62130031276
-1981124507420
+730315957
+199-1283631271
 MainWindow.xaml;Styles.xaml;
 
 False

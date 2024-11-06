@@ -1,8 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "SUhUWIQRcao=",
+  "dgSpecHash": "z04cAlsr5fA=",
   "success": true,
-  "projectFilePath": "F:\\Documentos\\MicrosoftSource\\repos\\ModbusPlug\\ModbusPlug\\ModbusPlug.csproj",
-  "expectedPackageFiles": [],
+  "projectFilePath": "C:\\Users\\ferna\\Documents\\00_Proyectos\\ModbusPlug\\ModbusPlug.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\ferna\\.nuget\\packages\\nmodbus\\3.0.81\\nmodbus.3.0.81.nupkg.sha512"
+  ],
   "logs": []
 }

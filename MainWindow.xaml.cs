@@ -43,7 +43,7 @@ namespace ModbusPlug
         }
 
         // Método para imprimir mensajes en el archivo de log y la interfaz
-        private void LogMessage(string message)
+        public void LogMessage(string message)
         {
             string logEntry = $"{DateTime.Now:HH:mm:ss} - {message}";
             File.AppendAllText(LogFilePath, logEntry + Environment.NewLine);
@@ -72,11 +72,30 @@ namespace ModbusPlug
             LogMessage("Run Server button clicked!");
         }
 
+
+        private ModbusClient _modbusClient;
+
+
         // Definición del evento para el botón "Start Client Reading"
         private void StartClientReading_Click(object sender, RoutedEventArgs e)
         {
-            // Aquí irá la lógica para iniciar la lectura de clientes
-            LogMessage("Start Client Reading button clicked!");
+            if (_modbusClient == null)
+            {
+                _modbusClient = new ModbusClient("192.168.1.10", 502, 1, LogMessage);
+
+                // Configurar las direcciones a leer con sus intervalos
+                _modbusClient.AddressesToRead.Add(new ModbusAddress(0, 10, 1000));  // Lee 10 registros desde la dirección 0 cada 1 segundo
+                _modbusClient.AddressesToRead.Add(new ModbusAddress(20, 5, 5000));  // Lee 5 registros desde la dirección 20 cada 5 segundos
+
+                // Iniciar la lectura
+                _modbusClient.StartReading();
+                LogMessage("Client started reading.");
+            }
+            else
+            {
+                LogMessage("Client is already reading.");
+            }
+
         }
 
     }

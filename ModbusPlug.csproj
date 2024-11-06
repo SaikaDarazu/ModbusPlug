@@ -8,4 +8,8 @@
     <UseWPF>true</UseWPF>
   </PropertyGroup>
 
+  <ItemGroup>
+    <PackageReference Include="NModbus" Version="3.0.81" />
+  </ItemGroup>
+
 </Project>

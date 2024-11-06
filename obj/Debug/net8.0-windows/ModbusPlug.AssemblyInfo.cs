@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("ModbusPlug")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+1e4e698fbe7d20c9c26ba1e011d281f9d24b3b32")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+b0e7805a72b4d115a6c35ae9694a366fd8f0b639")]
 [assembly: System.Reflection.AssemblyProductAttribute("ModbusPlug")]
 [assembly: System.Reflection.AssemblyTitleAttribute("ModbusPlug")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
