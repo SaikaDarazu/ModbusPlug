@@ -47,19 +47,19 @@
   },
   "packageFolders": {
     "C:\\Users\\ferna\\.nuget\\packages\\": {},
-    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
+    "D:\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\ferna\\Documents\\00_Proyectos\\ModbusPlug\\ModbusPlug.csproj",
+      "projectUniqueName": "F:\\Documentos\\MicrosoftSource\\repos\\ModbusPlug\\ModbusPlug\\ModbusPlug.csproj",
       "projectName": "ModbusPlug",
-      "projectPath": "C:\\Users\\ferna\\Documents\\00_Proyectos\\ModbusPlug\\ModbusPlug.csproj",
+      "projectPath": "F:\\Documentos\\MicrosoftSource\\repos\\ModbusPlug\\ModbusPlug\\ModbusPlug.csproj",
       "packagesPath": "C:\\Users\\ferna\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\ferna\\Documents\\00_Proyectos\\ModbusPlug\\obj\\",
+      "outputPath": "F:\\Documentos\\MicrosoftSource\\repos\\ModbusPlug\\ModbusPlug\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
-        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        "D:\\Microsoft Visual Studio\\Shared\\NuGetPackages"
       ],
       "configFilePaths": [
         "C:\\Users\\ferna\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -87,8 +87,9 @@
       "restoreAuditProperties": {
         "enableAudit": "true",
         "auditLevel": "low",
-        "auditMode": "direct"
-      }
+        "auditMode": "all"
+      },
+      "SdkAnalysisLevel": "9.0.100"
     },
     "frameworks": {
       "net8.0-windows7.0": {
@@ -118,7 +119,7 @@
             "privateAssets": "none"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.403/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.100-rc.2.24474.11/PortableRuntimeIdentifierGraph.json"
       }
     }
   }

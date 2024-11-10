@@ -5,24 +5,56 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ModbusPlug"
         mc:Ignorable="d"
-        Title="Modbus Plug" Height="450" Width="800">
+        Title="Modbus Plug" Height="300" Width="600"
+        MinHeight="400" MinWidth="600" Cursor="">
 
-    <Grid>
-        <StackPanel Orientation="Vertical" HorizontalAlignment="Left" Margin="30,30,0,0">
+    <Grid Margin="10" Cursor="">
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="auto" />
+            <ColumnDefinition Width="auto" />
+            <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+
+
+        <!-- StackPanel para los botones -->
+        <StackPanel Grid.Row="0" Grid.Column="0" Orientation="Vertical" HorizontalAlignment="Left" Margin="0,30,0,0">
             <!-- Botón con estilo aplicado -->
             <Button Name="RunServerButton" Content="Run Server"
-                Style="{StaticResource ControlButtonsStyle}"
-                Click="RunServer_Click" />
+                    Style="{StaticResource ControlButtonsStyle}"
+                    Click="RunServer_Click" />
 
             <!-- Otro botón con el mismo estilo aplicado -->
             <Button Name="StartClientReadingButton" Content="Start Client Reading"
-                Style="{StaticResource ControlButtonsStyle}"
-                Click="StartClientReading_Click" />
+                    Style="{StaticResource ControlButtonsStyle}"
+                    Click="StartClientReading_Click" />
+        </StackPanel>
+        <StackPanel Grid.Row="0" Grid.Column="1" Orientation="Vertical" HorizontalAlignment="Left" Margin="0,30,0,0">
+            <Button Name="ConfigServer" Content="Config Server"
+                    Style="{StaticResource ControlButtonsStyle}"
+                    Click="RunServer_Click" Cursor="Hand" />
+            <Button Name="ConfigClients" Content="Config Client Reading"
+                   Style="{StaticResource ControlButtonsStyle}"
+                   Click="RunServer_Click" />
         </StackPanel>
 
+        <StackPanel Grid.Row="0" Grid.Column="2" Orientation="Vertical" HorizontalAlignment="Left" Margin="0,30,0,0" >
+            <Button Name="a" Content="Config Server"
+                    Style="{StaticResource ControlButtonsStyle}"
+                    Click="RunServer_Click" Cursor="Hand" />
+            <Button Name="b" Content="Config Client Reading"
+                   Style="{StaticResource ControlButtonsStyle}"
+                   Click="RunServer_Click" />
+        </StackPanel>
+
+
         <!-- RichTextBox para mostrar el log de eventos -->
-        <RichTextBox Name="StatusRichTextBox" Width="700" Height="200"
-                 HorizontalAlignment="Left" VerticalAlignment="Top"
-                 Margin="30,180,0,0" IsReadOnly="True" />
+        <RichTextBox Grid.Row="1" VerticalScrollBarVisibility="Auto" Name="StatusRichTextBox"
+                 Margin="10,5,0,0" IsReadOnly="True" Cursor="" Grid.ColumnSpan="3" VerticalAlignment="Top" />
     </Grid>
 </Window>

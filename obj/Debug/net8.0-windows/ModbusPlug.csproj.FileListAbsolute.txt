@@ -20,3 +20,7 @@ F:\Documentos\MicrosoftSource\repos\ModbusPlug\ModbusPlug\obj\Debug\net8.0-windo
 F:\Documentos\MicrosoftSource\repos\ModbusPlug\ModbusPlug\obj\Debug\net8.0-windows\ref\ModbusPlug.dll
 F:\Documentos\MicrosoftSource\repos\ModbusPlug\ModbusPlug\obj\Debug\net8.0-windows\Styles.baml
 F:\Documentos\MicrosoftSource\repos\ModbusPlug\ModbusPlug\obj\Debug\net8.0-windows\App.baml
+F:\Documentos\MicrosoftSource\repos\ModbusPlug\ModbusPlug\bin\Debug\net8.0-windows\NModbus.dll
+F:\Documentos\MicrosoftSource\repos\ModbusPlug\ModbusPlug\obj\Debug\net8.0-windows\ModbusPlug.csproj.AssemblyReference.cache
+F:\Documentos\MicrosoftSource\repos\ModbusPlug\ModbusPlug\obj\Debug\net8.0-windows\ModbusPlug.sourcelink.json
+F:\Documentos\MicrosoftSource\repos\ModbusPlug\ModbusPlug\obj\Debug\net8.0-windows\ModbusPlug.csproj.Up2Date

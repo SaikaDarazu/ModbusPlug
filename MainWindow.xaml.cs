@@ -31,6 +31,11 @@ namespace ModbusPlug
             InitializeComponent();
             EnsureLogsDirectoryExists();
             LoadLastLinesFromLog();
+            // Desplaza hacia el final después de un pequeño retraso para asegurar que el RichTextBox esté actualizado
+            //Mensaje de que se ha iniciado la aplicación y cargado el log
+            Dispatcher.BeginInvoke(new Action(() => StatusRichTextBox.ScrollToEnd()), System.Windows.Threading.DispatcherPriority.ApplicationIdle);
+            LogMessage("Aplicación iniciada y log cargado.");
+
         }
 
         // Método para asegurar que las carpetas de logs existan
@@ -45,9 +50,13 @@ namespace ModbusPlug
         // Método para imprimir mensajes en el archivo de log y la interfaz
         public void LogMessage(string message)
         {
-            string logEntry = $"{DateTime.Now:HH:mm:ss} - {message}";
-            File.AppendAllText(LogFilePath, logEntry + Environment.NewLine);
-            LoadLastLinesFromLog();
+            Dispatcher.Invoke(() =>
+            {
+                string logEntry = $"{DateTime.Now:HH:mm:ss} - {message}";
+                File.AppendAllText(LogFilePath, logEntry + Environment.NewLine);
+                LoadLastLinesFromLog(); // Actualiza la interfaz de usuario
+                
+            });
         }
 
         // Método para cargar las últimas 100 líneas del archivo de log en el RichTextBox
@@ -59,12 +68,23 @@ namespace ModbusPlug
                 StatusRichTextBox.Document.Blocks.Clear();
                 foreach (var line in lastLines)
                 {
-                    StatusRichTextBox.Document.Blocks.Add(new Paragraph(new Run(line)) {Margin = new Thickness(0) });
+                    StatusRichTextBox.Document.Blocks.Add(new Paragraph(new Run(line)) { Margin = new Thickness(0) });
                 }
                 StatusRichTextBox.ScrollToEnd();
             }
-        }
+            else
+            {
+                File.Create(LogFilePath);
+                var lastLines = File.ReadLines(LogFilePath).Reverse().Take(100).Reverse();
+                StatusRichTextBox.Document.Blocks.Clear();
+                foreach (var line in lastLines)
+                {
+                    StatusRichTextBox.Document.Blocks.Add(new Paragraph(new Run(line)) { Margin = new Thickness(0) });
+                }
+                StatusRichTextBox.ScrollToEnd();
 
+            }
+        }
         // Definición del evento para el botón "Run Server"
         private void RunServer_Click(object sender, RoutedEventArgs e)
         {
@@ -81,15 +101,26 @@ namespace ModbusPlug
         {
             if (_modbusClient == null)
             {
-                _modbusClient = new ModbusClient("192.168.1.10", 502, 1, LogMessage);
+                _modbusClient = new ModbusClient("192.168.1.112", 502, 1, LogMessage);
 
                 // Configurar las direcciones a leer con sus intervalos
-                _modbusClient.AddressesToRead.Add(new ModbusAddress(0, 10, 1000));  // Lee 10 registros desde la dirección 0 cada 1 segundo
-                _modbusClient.AddressesToRead.Add(new ModbusAddress(20, 5, 5000));  // Lee 5 registros desde la dirección 20 cada 5 segundos
-
+                _modbusClient.AddressesToRead.Add(new ModbusAddress(0, 1, 1000));  // Lee 10 registros desde la dirección 0 cada 1 segundo
+                _modbusClient.AddressesToRead.Add(new ModbusAddress(1, 1, 1000));  // Lee 10 registros desde la dirección 0 cada 1 segundo
+                _modbusClient.AddressesToRead.Add(new ModbusAddress(2, 1, 5000));  // Lee 10 registros desde la dirección 0 cada 1 segundo
                 // Iniciar la lectura
+                LogMessage("Iniciando lectura del cliente...");
                 _modbusClient.StartReading();
                 LogMessage("Client started reading.");
+
+                /*
+                //hago una task en la que espero 5 segundos y luego desconecto el cliente y le hago null
+
+                Task.Delay(5000).ContinueWith(t =>
+                {
+                    _modbusClient.Disconnect();
+                    _modbusClient = null;
+                });
+                */
             }
             else
             {

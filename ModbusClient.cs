@@ -76,8 +76,10 @@ public class ModbusClient
     // Método para iniciar lecturas en paralelo según la frecuencia de cada dirección
     public void StartReading()
     {
+        _logMethod("Iniciando StartReading...");
         foreach (var address in AddressesToRead)
         {
+            _logMethod($"Starting reading task for Address: {address.StartAddress}");
             Task.Run(() => StartReadingAddress(address), _cts.Token);
         }
     }
@@ -85,6 +87,7 @@ public class ModbusClient
     // Tarea de lectura para una dirección específica con un intervalo configurado
     private async Task StartReadingAddress(ModbusAddress address)
     {
+        _logMethod($"Leyendo direcciones...");
         while (!_cts.Token.IsCancellationRequested)
         {
             if (!_isConnected)
