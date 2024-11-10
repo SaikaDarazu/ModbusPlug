@@ -42,7 +42,7 @@ public class ModbusClient
         _logMethod = logMethod; // Guardamos el método de log
         Connect();
     }
-
+    // Método para conectar al cliente Modbus
     private void Connect()
     {
         if (_client != null)
