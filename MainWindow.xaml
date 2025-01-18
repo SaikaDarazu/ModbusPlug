@@ -32,15 +32,16 @@
             <!-- Otro botón con el mismo estilo aplicado -->
             <Button Name="StartClientReadingButton" Content="Start Client Reading"
                     Style="{StaticResource ControlButtonsStyle}"
-                    Click="StartClientReading_Click" />
+                    Click="LecturaClientes_Boton" />
         </StackPanel>
         <StackPanel Grid.Row="0" Grid.Column="1" Orientation="Vertical" HorizontalAlignment="Left" Margin="0,30,0,0">
-            <Button Name="ConfigServer" Content="Config Server"
+            <Button Name="ConfigServer" Content="Stop Server"
                     Style="{StaticResource ControlButtonsStyle}"
                     Click="RunServer_Click" Cursor="Hand" />
-            <Button Name="ConfigClients" Content="Config Client Reading"
+            
+            <Button Name="DisconectClients" Content="Stop Client Reading"
                    Style="{StaticResource ControlButtonsStyle}"
-                   Click="RunServer_Click" />
+                   Click="DesconectarClientes_Boton"  />
         </StackPanel>
 
         <StackPanel Grid.Row="0" Grid.Column="2" Orientation="Vertical" HorizontalAlignment="Left" Margin="0,30,0,0" >
@@ -54,7 +55,7 @@
 
 
         <!-- RichTextBox para mostrar el log de eventos -->
-        <RichTextBox Grid.Row="1" VerticalScrollBarVisibility="Auto" Name="StatusRichTextBox"
+        <RichTextBox Grid.Row="1" VerticalScrollBarVisibility="Auto" Name="TextBoxLogs"
                  Margin="10,5,0,0" IsReadOnly="True" Cursor="" Grid.ColumnSpan="3" VerticalAlignment="Top" />
     </Grid>
 </Window>
